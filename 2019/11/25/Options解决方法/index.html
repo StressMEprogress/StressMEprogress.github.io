@@ -79,12 +79,14 @@
 
 
 
+<meta name="description" content="如何开启gzip项目环境 vue-cli 3.0 安装需要的npm包 compression-webpack-plugin1$ npm i -D compression-webpack-plugin vue.config.js1234567891011configureWebpack: &amp;#123;    plugins: [                new CompressionWebpa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test_my_site">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;22&#x2F;test-my-site&#x2F;index.html">
+<meta property="og:title" content="vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法&#39;">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;25&#x2F;Options%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何开启gzip项目环境 vue-cli 3.0 安装需要的npm包 compression-webpack-plugin1$ npm i -D compression-webpack-plugin vue.config.js1234567891011configureWebpack: &amp;#123;    plugins: [                new CompressionWebpa">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-22T09:45:02.688Z">
+<meta property="og:updated_time" content="2019-11-25T09:14:28.510Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -115,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/22/test-my-site/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/25/Options解决方法/"/>
 
 
 
 
 
-  <title>test_my_site | Hexo</title>
+  <title>vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法' | Hexo</title>
   
 
 
@@ -228,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/test-my-site/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/Options%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -245,7 +247,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test_my_site</h1>
+          <h1 class="post-title" itemprop="name headline">vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法'</h1>
         
 
         <div class="post-meta">
@@ -257,8 +259,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-22T17:45:02+08:00">
-                2019-11-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T17:00:59+08:00">
+                2019-11-25
               </time>
             
 
@@ -295,7 +297,10 @@
       
 
       
-        
+        <h2 id="如何开启gzip"><a href="#如何开启gzip" class="headerlink" title="如何开启gzip"></a>如何开启gzip</h2><h4 id="项目环境-vue-cli-3-0-安装需要的npm包-compression-webpack-plugin"><a href="#项目环境-vue-cli-3-0-安装需要的npm包-compression-webpack-plugin" class="headerlink" title="项目环境 vue-cli 3.0 安装需要的npm包 compression-webpack-plugin"></a>项目环境 vue-cli 3.0 安装需要的npm包 compression-webpack-plugin</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -D compression-webpack-plugin</span><br></pre></td></tr></table></figure>
+<h4 id="vue-config-js"><a href="#vue-config-js" class="headerlink" title="vue.config.js"></a>vue.config.js</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">configureWebpack: &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">                new CompressionWebpackPlugin(&#123;</span><br><span class="line">                    asset: <span class="string">'[path].gz[query]'</span>, //(asset  1.x版本)</span><br><span class="line">                    algorithm: <span class="string">'gzip'</span>,</span><br><span class="line">                    <span class="built_in">test</span>: new RegExp(<span class="string">'\\.('</span> + productionGzipExtensions.join(<span class="string">'|'</span>) + <span class="string">')$'</span>),</span><br><span class="line">                    threshold: 10240,</span><br><span class="line">                    minRatio: 0.8</span><br><span class="line">                &#125;)</span><br><span class="line">            ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Compression-Plugin-Invalid-Options"><a href="#Compression-Plugin-Invalid-Options" class="headerlink" title="Compression Plugin Invalid Options"></a>Compression Plugin Invalid Options</h2><h4 id="compression-webpack-plugin版本是2-X-需要将asset改成filename-或者省略也可以解决Compression-Plugin-Invalid-Options无效的问题"><a href="#compression-webpack-plugin版本是2-X-需要将asset改成filename-或者省略也可以解决Compression-Plugin-Invalid-Options无效的问题" class="headerlink" title="compression-webpack-plugin版本是2.X  需要将asset改成filename 或者省略也可以解决Compression Plugin Invalid Options无效的问题"></a>compression-webpack-plugin版本是2.X  需要将asset改成filename 或者省略也可以解决Compression Plugin Invalid Options无效的问题</h4>
       
     </div>
     
@@ -319,8 +324,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/22/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/11/22/test-my-site/" rel="next" title="test_my_site">
+                <i class="fa fa-chevron-left"></i> test_my_site
               </a>
             
           </div>
@@ -328,10 +333,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/25/Options%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="prev" title="vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法'">
-                vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法' <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -383,8 +384,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -426,6 +436,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何开启gzip"><span class="nav-number">1.</span> <span class="nav-text">如何开启gzip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#项目环境-vue-cli-3-0-安装需要的npm包-compression-webpack-plugin"><span class="nav-number">1.0.1.</span> <span class="nav-text">项目环境 vue-cli 3.0 安装需要的npm包 compression-webpack-plugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-config-js"><span class="nav-number">1.0.2.</span> <span class="nav-text">vue.config.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compression-Plugin-Invalid-Options"><span class="nav-number">2.</span> <span class="nav-text">Compression Plugin Invalid Options</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#compression-webpack-plugin版本是2-X-需要将asset改成filename-或者省略也可以解决Compression-Plugin-Invalid-Options无效的问题"><span class="nav-number">2.0.1.</span> <span class="nav-text">compression-webpack-plugin版本是2.X  需要将asset改成filename 或者省略也可以解决Compression Plugin Invalid Options无效的问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
