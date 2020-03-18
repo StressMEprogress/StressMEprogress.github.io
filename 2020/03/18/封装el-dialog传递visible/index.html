@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="1 创建一个画布元素2 获取画布的上下文3 初始化视口4 创建一个或者多个包含渲染数据的数组5 创建一个或者多个矩阵，将定点数据变换到屏幕空间中6 创建一个或者多个着色器来实现绘制算法7 使用参数初始化着色器8 绘制">
+<meta name="description" content="12345678910111213141516 props:&amp;#123;  visible:&amp;#123;    type:Boolean,    default:false  &amp;#125;,&amp;#125;,computed:&amp;#123;    mVisible:&amp;#123;       get()&amp;#123;            return this.visible       &amp;#125;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WebGl将图形渲染到页面执行步骤">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;WebGl%E5%B0%86%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%89%A7%E8%A1%8C%E6%AD%A5%E9%AA%A4&#x2F;index.html">
+<meta property="og:title" content="封装el-dialog传递visible">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;18&#x2F;%E5%B0%81%E8%A3%85el-dialog%E4%BC%A0%E9%80%92visible&#x2F;index.html">
 <meta property="og:site_name" content="个人技术博客">
-<meta property="og:description" content="1 创建一个画布元素2 获取画布的上下文3 初始化视口4 创建一个或者多个包含渲染数据的数组5 创建一个或者多个矩阵，将定点数据变换到屏幕空间中6 创建一个或者多个着色器来实现绘制算法7 使用参数初始化着色器8 绘制">
+<meta property="og:description" content="12345678910111213141516 props:&amp;#123;  visible:&amp;#123;    type:Boolean,    default:false  &amp;#125;,&amp;#125;,computed:&amp;#123;    mVisible:&amp;#123;       get()&amp;#123;            return this.visible       &amp;#125;,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-02T07:46:43.977Z">
+<meta property="og:updated_time" content="2020-03-18T07:46:06.304Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/02/WebGl将图形渲染到页面执行步骤/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/18/封装el-dialog传递visible/"/>
 
 
 
 
 
-  <title>WebGl将图形渲染到页面执行步骤 | 个人技术博客</title>
+  <title>封装el-dialog传递visible | 个人技术博客</title>
   
 
 
@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/WebGl%E5%B0%86%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%89%A7%E8%A1%8C%E6%AD%A5%E9%AA%A4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/%E5%B0%81%E8%A3%85el-dialog%E4%BC%A0%E9%80%92visible/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨雷">
@@ -247,7 +247,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WebGl将图形渲染到页面执行步骤</h1>
+          <h1 class="post-title" itemprop="name headline">封装el-dialog传递visible</h1>
         
 
         <div class="post-meta">
@@ -259,8 +259,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-02T15:42:26+08:00">
-                2019-12-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-18T15:37:58+08:00">
+                2020-03-18
               </time>
             
 
@@ -297,7 +297,9 @@
       
 
       
-        <h4 id="1-创建一个画布元素"><a href="#1-创建一个画布元素" class="headerlink" title="1 创建一个画布元素"></a>1 创建一个画布元素</h4><h4 id="2-获取画布的上下文"><a href="#2-获取画布的上下文" class="headerlink" title="2 获取画布的上下文"></a>2 获取画布的上下文</h4><h4 id="3-初始化视口"><a href="#3-初始化视口" class="headerlink" title="3 初始化视口"></a>3 初始化视口</h4><h4 id="4-创建一个或者多个包含渲染数据的数组"><a href="#4-创建一个或者多个包含渲染数据的数组" class="headerlink" title="4 创建一个或者多个包含渲染数据的数组"></a>4 创建一个或者多个包含渲染数据的数组</h4><h4 id="5-创建一个或者多个矩阵，将定点数据变换到屏幕空间中"><a href="#5-创建一个或者多个矩阵，将定点数据变换到屏幕空间中" class="headerlink" title="5 创建一个或者多个矩阵，将定点数据变换到屏幕空间中"></a>5 创建一个或者多个矩阵，将定点数据变换到屏幕空间中</h4><h4 id="6-创建一个或者多个着色器来实现绘制算法"><a href="#6-创建一个或者多个着色器来实现绘制算法" class="headerlink" title="6 创建一个或者多个着色器来实现绘制算法"></a>6 创建一个或者多个着色器来实现绘制算法</h4><h4 id="7-使用参数初始化着色器"><a href="#7-使用参数初始化着色器" class="headerlink" title="7 使用参数初始化着色器"></a>7 使用参数初始化着色器</h4><h4 id="8-绘制"><a href="#8-绘制" class="headerlink" title="8 绘制"></a>8 绘制</h4>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> props:&#123;</span><br><span class="line">  visible:&#123;</span><br><span class="line">    <span class="built_in">type</span>:Boolean,</span><br><span class="line">    default:<span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br><span class="line">computed:&#123;</span><br><span class="line">    mVisible:&#123;</span><br><span class="line">       <span class="function"><span class="title">get</span></span>()&#123;</span><br><span class="line">            <span class="built_in">return</span> this.visible</span><br><span class="line">       &#125;,</span><br><span class="line">       <span class="built_in">set</span>(s)&#123;</span><br><span class="line">            this.<span class="variable">$emit</span>(<span class="string">'update'</span>);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -321,8 +323,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/25/Options%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="next" title="vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法'">
-                <i class="fa fa-chevron-left"></i> vue-cli 3.0开启gzip Compression Plugin Invalid Options解决方法'
+              <a href="/2019/12/02/WebGl%E5%B0%86%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%89%A7%E8%A1%8C%E6%AD%A5%E9%AA%A4/" rel="next" title="WebGl将图形渲染到页面执行步骤">
+                <i class="fa fa-chevron-left"></i> WebGl将图形渲染到页面执行步骤
               </a>
             
           </div>
@@ -330,10 +332,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/18/%E5%B0%81%E8%A3%85el-dialog%E4%BC%A0%E9%80%92visible/" rel="prev" title="封装el-dialog传递visible">
-                封装el-dialog传递visible <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -385,17 +383,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -437,22 +426,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建一个画布元素"><span class="nav-number">1.</span> <span class="nav-text">1 创建一个画布元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-获取画布的上下文"><span class="nav-number">2.</span> <span class="nav-text">2 获取画布的上下文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-初始化视口"><span class="nav-number">3.</span> <span class="nav-text">3 初始化视口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-创建一个或者多个包含渲染数据的数组"><span class="nav-number">4.</span> <span class="nav-text">4 创建一个或者多个包含渲染数据的数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-创建一个或者多个矩阵，将定点数据变换到屏幕空间中"><span class="nav-number">5.</span> <span class="nav-text">5 创建一个或者多个矩阵，将定点数据变换到屏幕空间中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-创建一个或者多个着色器来实现绘制算法"><span class="nav-number">6.</span> <span class="nav-text">6 创建一个或者多个着色器来实现绘制算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-使用参数初始化着色器"><span class="nav-number">7.</span> <span class="nav-text">7 使用参数初始化着色器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-绘制"><span class="nav-number">8.</span> <span class="nav-text">8 绘制</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
